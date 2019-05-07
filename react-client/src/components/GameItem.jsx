@@ -54,18 +54,21 @@ const GameItem = (props) => {
   let awayTeam = game.teams[0] === homeTeam ? game.teams[1] : game.teams[0];
   let homeTeamOdds = bovadaOdds[homeTeam];
   let awayTeamOdds = bovadaOdds[awayTeam];
+  const divStyle = {
+    width: '35rem'
+  }
   return (
-    <div>
-      <h4>Game #{props.id + 1}</h4>
-      <h5>Start time: {tipoffTime}</h5>
-      <h5>Home Team</h5>
-      {homeTeam} <i>{homeTeamOdds}</i>
-      <h5>Away Team</h5>
-      {awayTeam} <i>{awayTeamOdds}</i>
-      {/* {props.items.map(item => <ListItem item={item} />)} */}
+    <div className="card" style={divStyle}>
+      <div className="card-header">
+        Game #{props.id + 1}
+      </div>
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item">Start time: {tipoffTime}</li>
+        <li className="list-group-item">Home Team - {homeTeam}: <b><i>{homeTeamOdds}</i></b> <button className="btn btn-outline-primary btn-sm" type="submit">Select</button></li>
+        <li className="list-group-item">Away Team - {awayTeam}: <b><i>{awayTeamOdds}</i></b> <button className="btn btn-outline-primary btn-sm" type="submit">Select</button></li>
+      </ul>
     </div>
   )
 }
-
 
 export default GameItem;

@@ -30,7 +30,8 @@ class NameForm extends React.Component {
       error: (err) => {
         console.log('err', err);
       }
-    });
+    })
+      .done(this.props.handleUsernameSubmission)
   }
 
   handleInputChange(event) {

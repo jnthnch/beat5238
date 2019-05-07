@@ -4,11 +4,12 @@ const Standings = (props) => {
   const users = props.users.map((user, idx) => {
     return (
       <tr key={idx}>
-        <th scope="row">1</th>
+        <th scope="row">{idx + 1}</th>
         <td>{user.username}</td>
-        <td>1</td>
         <td>0</td>
-        <td>100%</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0%</td>
       </tr>
     )
   });
@@ -23,6 +24,7 @@ const Standings = (props) => {
             <th scope="col">Username</th>
             <th scope="col">Wins</th>
             <th scope="col">Losses</th>
+            <th scope="col">Ties</th>
             <th scope="col">Win %</th>
           </tr>
         </thead>

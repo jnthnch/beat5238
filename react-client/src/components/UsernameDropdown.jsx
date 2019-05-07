@@ -3,23 +3,23 @@ import React from 'react';
 class UsernameDropdown extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { value: '' }
+    this.state = { currentUser: '' }
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value }, console.log('set the state!'));
+    this.setState({ currentUser: event.target.value });
   }
 
   render() {
     const users = this.props.users;
     return (
       <div>
-        <form onSubmit={this.props.handleUsernameSelection}>
+        <form onSubmit={(e) => this.props.handleUsernameSelection(e, this.state.currentUser)}>
           <label>
             Select Username
-            <select value={this.state.value} onChange={(e) => this.handleChange(e)}>
+            <select value={this.state.value} className="custom-select" onChange={(e) => this.handleChange(e)}>
               <option value=""></option>
               {users.map((user, idx) => {
                 return <option key={idx} value={user.username}>{user.username}</option>
