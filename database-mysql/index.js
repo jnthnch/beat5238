@@ -25,14 +25,17 @@ module.exports = {
     });
   },
   postRecord: function (username, callback) {
-    let user_id = connection.query(`SELECT id FROM users WHERE username = ${username}`)
-    let addRecordQueryStr = 'insert into records(wins, losses, ties, user_id)  (?, ?, ?, ?)';
-    connection.query(addRecordQueryStr, 0, 0, 0, user_id, function (err, results) {
-      callback(err, results);
+    let user_id;
+    connection.query(`SELECT id FROM users WHERE username = '${username}'`, function (error, result) {
+      if (error) {
+        throw error;
+      } else {
+        user_id = result[0]['id'];
+        let addRecordQueryStr = `insert into records(wins, losses, ties, user_id) values (?, ?, ?, ?)`;
+        connection.query(addRecordQueryStr, [0, 0, 0, user_id], function (err, results) {
+          callback(err, results);
+        })
+      }
     })
   }
 };
-
-
-
-// module.exports.selectAll = selectAll;
