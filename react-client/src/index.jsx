@@ -4,6 +4,7 @@ import $ from 'jquery';
 import NameForm from './components/NameForm.jsx';
 import UsernameDropdown from './components/UsernameDropdown.jsx';
 import GameList from './components/GameList.jsx';
+import Standings from './components/Standings.jsx';
 import GameSlate from './sample_data';
 
 class App extends React.Component {
@@ -11,8 +12,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       users: [],
-      games: []
+      games: [],
+      currentUser: ''
     }
+    this.handleUsernameSubmission = this.handleUsernameSubmission.bind(this);
     this.handleUsernameSelection = this.handleUsernameSelection.bind(this);
   }
 
@@ -22,7 +25,7 @@ class App extends React.Component {
       success: (data) => {
         this.setState({
           users: data,
-          games: GameSlate
+          games: GameSlate,
         })
       },
       error: (err) => {
@@ -44,17 +47,37 @@ class App extends React.Component {
     // });
   }
 
-  handleUsernameSelection() {
+  handleUsernameSubmission() {
+    console.log('user submitted!')
+    $.ajax({
+      url: '/users',
+      success: (data) => {
+        this.setState({
+          users: data,
+        })
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+  }
 
+
+  handleUsernameSelection(e, currentUser) {
+    e.preventDefault();
+    this.setState({
+      currentUser: currentUser
+    })
   }
 
   render() {
     return (
       <div>
-        <h1>52.38% Weekly Sports Picks</h1>
-        <NameForm />
+        <h1>52.38% NBA Picks Challenge</h1>
+        <NameForm handleUsernameSubmission={this.handleUsernameSubmission} />
         <UsernameDropdown users={this.state.users} handleUsernameSelection={this.handleUsernameSelection} />
         <GameList games={this.state.games} />
+        <Standings users={this.state.users} />
       </div>
     )
   }

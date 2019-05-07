@@ -34,6 +34,7 @@ app.get('/users', function (req, res) {
 
 app.post('/users', function (req, res) {
   let params = req.body;
+  let username = Object.values(params)[2];
   users.postUser(params, function (err, data) {
     if (err) {
       console.log('received an error', err)
@@ -43,12 +44,12 @@ app.post('/users', function (req, res) {
     }
   });
 
-  users.postRecord(params, function (err, data) {
+  users.postRecord(username, function (err, data) {
     if (err) {
       console.log('received an error', err)
       res.sendStatus(500);
     } else {
-      res.json(data);
+      console.log('success!');
     }
   });
 });
