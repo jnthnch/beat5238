@@ -26,10 +26,7 @@ Once the project moves into development, the press release can be used as a touc
   > For sports fans who do not want to / don't have the access to bet against sportsbooks. 
 
 ## Solution ##
-  > Compete against your friends instead of the sportsbooks. It's very difficult to defeat the books.
-
-## Quote from You ##
-  > Have fun against your friends!
+  > Compete against your friends instead of the sportsbooks. It's very difficult to defeat the books. Most importantly, have fun playing against your friends, play for dinner, pushups, anything.
 
 ## How to Get Started ##
   > Sign up and start making picks!
