@@ -67,7 +67,7 @@ class NameForm extends React.Component {
               <input type="text" name="username" value={this.state.value} onChange={this.handleInputChange} required />
             </label>
           </div>
-          <input type="submit" className="btn btn-primary" value="Submit" />
+          <input type="submit" className="btn btn-primary" value="Sign Up" />
         </form>
       </div>
     )

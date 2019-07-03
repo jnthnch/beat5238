@@ -3,14 +3,14 @@ import React from 'react';
 const findBovadaSpread = (game) => {
   let bovadaOdds = {};
   const gameSites = game.sites;
-  const bovadaSite = gameSites.filter(site => site.site_key === 'bovada');
-  if (bovadaSite.length === 0) {
+  const betonlineag = gameSites.filter(site => site.site_key === 'betonlineag');
+  if (betonlineag.length === 0) {
     bovadaOdds[game.teams[0]] = 'No line available';
     bovadaOdds[game.teams[1]] = 'No line available';
 
   } else {
-    bovadaOdds[game.teams[0]] = bovadaSite[0].odds.h2h[0]
-    bovadaOdds[game.teams[1]] = bovadaSite[0].odds.h2h[1]
+    bovadaOdds[game.teams[0]] = betonlineag[0].odds.h2h[0]
+    bovadaOdds[game.teams[1]] = betonlineag[0].odds.h2h[1]
   }
   return bovadaOdds
 }
@@ -57,17 +57,20 @@ const GameItem = (props) => {
   const divStyle = {
     width: '35rem'
   }
+  const ulStyle = {
+    listStyleType: 'none'
+  }
   return (
     <div className="card" style={divStyle}>
-      <div className="card-header">
+      <div className="card-header" >
         Game #{props.id + 1}
       </div>
-      <ul className="list-group list-group-flush">
+      <ul className="list-group list-group-flush" style={ulStyle}>
         <li className="list-group-item">Start time: {tipoffTime}</li>
-        <li className="list-group-item">Home Team - {homeTeam}: <b><i>{homeTeamOdds}</i></b> <button className="btn btn-outline-primary btn-sm" type="submit">Select</button></li>
         <li className="list-group-item">Away Team - {awayTeam}: <b><i>{awayTeamOdds}</i></b> <button className="btn btn-outline-primary btn-sm" type="submit">Select</button></li>
+        <li className="list-group-item">Home Team - {homeTeam}: <b><i>{homeTeamOdds}</i></b> <button className="btn btn-outline-primary btn-sm" type="submit">Select</button></li>
       </ul>
-    </div>
+    </div >
   )
 }
 

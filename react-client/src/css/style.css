@@ -1,0 +1,22 @@
+body {
+  background-color: #f2f2f2;
+}
+.UsernameDropdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  padding: 30px;
+  background-color: white;
+}
+
+#UsernameDropdownHeader {
+  text-align: center;
+  color: #e00000;
+}
+
+.btn-danger {
+  background-color: white;
+  color: #e00000;
+}

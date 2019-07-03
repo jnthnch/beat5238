@@ -12,7 +12,7 @@ const GameList = (props) => {
 
   return (
     <div>
-      {props.games.length} NBA games:
+      NBA games ({props.games.length})
       <ul>
         {games}
       </ul>

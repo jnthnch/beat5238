@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import "./css/style.css";
+import Router from './components/Router.js';
 import NameForm from './components/NameForm.jsx';
 import UsernameDropdown from './components/UsernameDropdown.jsx';
 import GameList from './components/GameList.jsx';
 import Standings from './components/Standings.jsx';
 import GameSlate from './sample_data';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +28,7 @@ class App extends React.Component {
       success: (data) => {
         this.setState({
           users: data,
-          games: GameSlate,
+          games: GameSlate
         })
       },
       error: (err) => {
@@ -74,7 +77,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>52.38% NBA Picks Challenge</h1>
-        <NameForm handleUsernameSubmission={this.handleUsernameSubmission} />
+        <NameForm handle2UsernameSubmission={this.handleUsernameSubmission} />
         <UsernameDropdown users={this.state.users} handleUsernameSelection={this.handleUsernameSelection} />
         <GameList games={this.state.games} />
         <Standings users={this.state.users} />
@@ -83,4 +86,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<Router />, document.getElementById('app'));
