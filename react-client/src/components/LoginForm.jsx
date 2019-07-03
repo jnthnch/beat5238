@@ -3,22 +3,27 @@ import React from 'react';
 function LoginForm(props) {
   return (
     <div>
-      <form onSubmit={this.handleSubmit}>
+      <h1 className="header">
+        Beat5238
+      </h1>
+      <form className="create-user-form" onSubmit={props.handleSubmit}>
         <div className="form-group">
           <label>
-            Last Name:
-              <input type="text" name="lastName" value={this.state.value} onChange={this.handleInputChange} required />
+            Username:
+              <input type="text" name="username" value='' onChange={props.handleInputChange} required />
           </label>
         </div>
 
         <div className="form-group">
           <label>
-            Username:
-              <input type="text" name="username" value={this.state.value} onChange={this.handleInputChange} required />
+            Password:
+              <input type="text" name="password" value='' onChange={props.handleInputChange} required />
           </label>
         </div>
-        <input type="submit" className="btn btn-primary" value="Sign Up" />
+        <input type="submit" className="btn btn-danger" value="Login" />
       </form>
     </div>
   )
 }
+
+export default LoginForm;
