@@ -5,6 +5,7 @@ var users = require('../database-mysql');
 // var items = require('../database-mongo');
 var axios = require('axios');
 var key = require('../config');
+var path = require('path');
 
 var app = express();
 
@@ -21,6 +22,10 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // UNCOMMENT FOR ANGULAR
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
+
+app.get('*', function (req, res) {
+  res.sendFile(path.resolve(__dirname, '../react-client/dist/index.html'))
+})
 
 app.get('/users', function (req, res) {
   users.selectAll(function (err, data) {
@@ -56,13 +61,13 @@ app.post('/users', function (req, res) {
 
 app.get('/games', function (req, res) {
   axios.get('https://api.the-odds-api.com/v3/odds/', {
-      params: {
-        sport: "basketball",
-        region: "us",
-        mkt: "h2h",
-        apiKey: key.the_odds_key
-      }
-    })
+    params: {
+      sport: "basketball",
+      region: "us",
+      mkt: "h2h",
+      apiKey: key.the_odds_key
+    }
+  })
     .then(function (response) {
       res.send(response.data)
     })

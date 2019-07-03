@@ -27,19 +27,24 @@ class UsernameDropdown extends React.Component {
 
   render() {
     return (
-      <div className="UsernameDropdown">
-        <form>
-          <label>
-            <h1 id="UsernameDropdownHeader">Select Your Username</h1>
-            <select className="custom-select">
-              <option value=""></option>
-              {this.state.users.map((user, idx) => {
-                return <option key={idx} value={user.username}>{user.username}</option>
-              })}
-            </select>
-          </label>
-          <input type="submit" className="btn btn-danger" value="Select" />
-        </form >
+      <div>
+        <h1 className="header">
+          Beat5238
+        </h1>
+        <div className="UsernameDropdown">
+          <form>
+            <label>
+              <h1 id="UsernameDropdownHeader">Select Your Username</h1>
+              <select className="custom-select">
+                <option value=""></option>
+                {this.state.users.map((user, idx) => {
+                  return <option key={idx} value={user.username}>{user.username}</option>
+                })}
+              </select>
+            </label>
+            <input type="submit" className="btn btn-danger" value="Select" />
+          </form >
+        </div>
       </div>
     )
   }
