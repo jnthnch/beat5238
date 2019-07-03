@@ -11,6 +11,7 @@ CREATE TABLE users (
   first_name VARCHAR(15) DEFAULT NULL,
   last_name VARCHAR(15) DEFAULT NULL,
   username VARCHAR(15) DEFAULT NULL,
+  hash_pw VARCHAR(25) DEFAULT NULL,
   PRIMARY KEY (id)
 );
 
