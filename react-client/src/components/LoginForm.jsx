@@ -44,7 +44,6 @@ class LoginForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(event);
   }
 
   render() {
@@ -67,9 +66,9 @@ class LoginForm extends React.Component {
           </div>
 
           <div className="equal-space-buttons">
-            <input type="submit" className="btn btn-danger" value="Login" />
+            <input type="submit" className="btn btn-danger" value="Login" onClick={e => console.log(`${e.target.value} button was clicked`)} />
             <Link to="/createuser">
-              <input type="submit" className="btn btn-danger" value="Sign Up" />
+              <input type="submit" className="btn btn-danger" value="Sign Up" onClick={e => console.log(`${e.target.value} button was clicked`)} />
             </Link>
           </div>
 
