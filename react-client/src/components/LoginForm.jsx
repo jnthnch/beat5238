@@ -6,11 +6,12 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.submitter = this.submitter.bind(this);
+    this.createUser = this.createUser.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  submitter(event) {
+  createUser(event) {
     event.preventDefault();
     $.ajax({
       type: "POST",
@@ -36,10 +37,14 @@ class LoginForm extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log('typing', event.target.value)
     this.setState({
       [name]: [value]
     })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log(event);
   }
 
   render() {
@@ -48,7 +53,7 @@ class LoginForm extends React.Component {
         <h1 className="header">
           Beat5238
         </h1>
-        <form className="forms" onSubmit={this.handleSubmit}>
+        <form className="forms" onSubmit={this.handleSubmit} method="post">
           <div className="equal-space-inputs">
             <label>
               Username:
