@@ -9,6 +9,8 @@ class LoginForm extends React.Component {
     this.createUser = this.createUser.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.checkPassword = this.checkPassword.bind(this);
   }
 
   createUser(event) {
@@ -38,12 +40,41 @@ class LoginForm extends React.Component {
     const value = target.value;
     const name = target.name;
     this.setState({
-      [name]: [value]
+      [name]: value
     })
   }
 
   handleSubmit(event) {
     event.preventDefault();
+  }
+
+  handleLogin(event) {
+    console.log('pressed login')
+    let usernameInput = this.state.username
+    let passwordInput = this.state.password;
+    this.checkPassword(usernameInput, passwordInput);
+  }
+
+  checkPassword(username, password) {
+    $.ajax({
+      type: "GET",
+      url: `/users/${username}`,
+      data: {
+        password: password
+      },
+      success: (data) => {
+        let dbPassword = data[0].password
+        if (dbPassword === password) {
+          console.log('password matches!!!')
+        } else {
+          alert('wrong password entered')
+        }
+        //TO DO: route to the next page? logged in
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    })
   }
 
   render() {
@@ -66,9 +97,9 @@ class LoginForm extends React.Component {
           </div>
 
           <div className="equal-space-buttons">
-            <input type="submit" className="btn btn-danger" value="Login" onClick={e => console.log(`${e.target.value} button was clicked`)} />
+            <button type="submit" className="btn btn-danger" value="Login" onClick={this.handleLogin}>Login</button>
             <Link to="/createuser">
-              <input type="submit" className="btn btn-danger" value="Sign Up" onClick={e => console.log(`${e.target.value} button was clicked`)} />
+              <button className="btn btn-danger" >Sign Up</button>
             </Link>
           </div>
 

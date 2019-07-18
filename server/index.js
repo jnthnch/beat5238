@@ -6,8 +6,11 @@ var users = require('../database-mysql');
 var axios = require('axios');
 var key = require('../config');
 var path = require('path');
+var morgan = require('morgan')
 
 var app = express();
+app.use(morgan('short'))
+
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -23,12 +26,24 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, '../react-client/dist/index.html'))
-})
+// app.get('*', function (req, res) {
+//   res.sendFile(path.resolve(__dirname, '../react-client/dist/index.html'))
+// })
 
 app.get('/users', function (req, res) {
   users.selectAll(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
+});
+
+// check for password
+app.get('/users/:username', function (req, res) {
+  let username = req.params.username
+  users.getUser(username, function (err, data) {
     if (err) {
       res.sendStatus(500);
     } else {

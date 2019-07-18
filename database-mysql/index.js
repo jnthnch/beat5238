@@ -37,5 +37,15 @@ module.exports = {
         })
       }
     })
+  },
+  getUser: function (username, callback) {
+    connection.query(`SELECT * FROM users WHERE username = '${username}'`, function (error, result) {
+      if (error) {
+        throw error;
+      } else {
+        callback(null, result);
+      }
+    })
   }
+
 };
