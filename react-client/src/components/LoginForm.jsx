@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
+// import bcrypt from '../../../bcrypt/hashing.js';
+import bcrypt from 'bcryptjs';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -11,6 +13,7 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.checkPassword = this.checkPassword.bind(this);
+    this.createBcrypt = this.createBcrypt.bind(this);
   }
 
   createUser(event) {
@@ -66,15 +69,25 @@ class LoginForm extends React.Component {
         let dbPassword = data[0].password
         if (dbPassword === password) {
           console.log('password matches!!!')
+          // TODO route to BETTING PAGE
         } else {
           alert('wrong password entered')
         }
-        //TO DO: route to the next page? logged in
       },
       error: (err) => {
         console.log('err', err);
       }
     })
+  }
+
+  createBcrypt(password) {
+    let passwordInput = this.state.password;
+    bcrypt.genSalt(10, function (err, salt) {
+      bcrypt.hash(passwordInput, salt, function (err, hash) {
+        // Store hash in your password DB.
+        console.log('hash is', hash)
+      });
+    });
   }
 
   render() {
@@ -98,6 +111,8 @@ class LoginForm extends React.Component {
 
           <div className="equal-space-buttons">
             <button type="submit" className="btn btn-danger" value="Login" onClick={this.handleLogin}>Login</button>
+            <button type="submit" className="btn btn-danger" value="Login" onClick={this.createBcrypt}>Bcrypt</button>
+
             <Link to="/createuser">
               <button className="btn btn-danger" >Sign Up</button>
             </Link>
