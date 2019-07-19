@@ -13,7 +13,7 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
     this.checkPassword = this.checkPassword.bind(this);
-    this.createBcrypt = this.createBcrypt.bind(this);
+    this.checkBcrypt = this.checkBcrypt.bind(this);
   }
 
   createUser(event) {
@@ -66,7 +66,9 @@ class LoginForm extends React.Component {
         password: password
       },
       success: (data) => {
+        // get salt back from database
         let dbPassword = data[0].password
+        //this.checkBcrypt(dbPassword, salt)
         if (dbPassword === password) {
           console.log('password matches!!!')
           // TODO route to BETTING PAGE
@@ -80,13 +82,9 @@ class LoginForm extends React.Component {
     })
   }
 
-  createBcrypt(password) {
-    let passwordInput = this.state.password;
-    bcrypt.genSalt(10, function (err, salt) {
-      bcrypt.hash(passwordInput, salt, function (err, hash) {
-        // Store hash in your password DB.
-        console.log('hash is', hash)
-      });
+  checkBcrypt(password, salt) {
+    bcrypt.hash(password, salt, function (err, hash) {
+      console.log('hash is', hash)
     });
   }
 
@@ -111,7 +109,6 @@ class LoginForm extends React.Component {
 
           <div className="equal-space-buttons">
             <button type="submit" className="btn btn-danger" value="Login" onClick={this.handleLogin}>Login</button>
-            <button type="submit" className="btn btn-danger" value="Login" onClick={this.createBcrypt}>Bcrypt</button>
 
             <Link to="/createuser">
               <button className="btn btn-danger" >Sign Up</button>
