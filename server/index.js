@@ -6,7 +6,9 @@ var users = require('../database-mysql');
 var axios = require('axios');
 var key = require('../config');
 var path = require('path');
-var morgan = require('morgan')
+var morgan = require('morgan');
+var bcrypt = require('bcryptjs');
+
 
 var app = express();
 app.use(morgan('short'))
@@ -52,26 +54,50 @@ app.get('/users/:username', function (req, res) {
   });
 });
 
-app.post('/users', function (req, res) {
+app.post('/createuser', function (req, res) {
   let params = req.body;
+  console.log('params are:', params)
   let username = Object.values(params)[2];
-  users.postUser(params, function (err, data) {
-    if (err) {
-      console.log('received an error', err)
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
+  let password = Object.values(params)[3];
+  password = password[0];
+
+  // we want to pass params object that looks like this:
+  // params = {
+  //   firstName: [],
+  //   lastName: [],
+  //   username: [],
+  //   hashed_password: [],
+  //   salt: []
+  // }
+
+  delete params['password'];
+
+  bcrypt.genSalt(10, function (err, salt) {
+    bcrypt.hash(password, salt, function (err, hash) {
+      params['hashed_password'] = hash;
+      params['salt'] = salt;
+      console.log('params inside are:', params);
+      users.postUser(params, function (err, data) {
+        if (err) {
+          console.log('received an error', err)
+          res.sendStatus(500);
+        } else {
+          res.json(data);
+        }
+      });
+    });
   });
 
-  users.postRecord(username, function (err, data) {
-    if (err) {
-      console.log('received an error', err)
-      res.sendStatus(500);
-    } else {
-      console.log('success!');
-    }
-  });
+
+
+  // users.postRecord(username, function (err, data) {
+  //   if (err) {
+  //     console.log('received an error', err)
+  //     res.sendStatus(500);
+  //   } else {
+  //     console.log('success!');
+  //   }
+  // });
 });
 
 app.get('/games', function (req, res) {

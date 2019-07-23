@@ -11,10 +11,11 @@ class CreateUserForm extends React.Component {
   }
 
   submitter(event) {
+    console.log('submitter clicked', event);
     event.preventDefault();
     $.ajax({
       type: "POST",
-      url: '/users/:username',
+      url: '/createuser',
       data: {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
@@ -22,15 +23,13 @@ class CreateUserForm extends React.Component {
         password: this.state.password, //TO DO: Encrypt the password; Bcrypt?
       },
       success: (data) => {
-        alert(`User created: ${username}`)
-        console.log('successfully created!')
+        alert(`User created`)
         //TO DO: route to the next page? logged in
       },
       error: (err) => {
         console.log('err', err);
       }
     })
-      .done(this.props.handleUsernameSubmission)
   }
 
   handleInputChange(event) {

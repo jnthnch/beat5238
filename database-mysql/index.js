@@ -19,7 +19,7 @@ module.exports = {
   },
   postUser: function (params, callback) {
     let userParams = Object.values(params);
-    let queryStr = 'insert into users(first_name, last_name, username) values (?, ?, ?)';
+    let queryStr = 'insert into users(first_name, last_name, username, hashed_password, salt) values (?, ?, ?, ?, ?)';
     connection.query(queryStr, userParams, function (err, results) {
       callback(err, results);
     });
