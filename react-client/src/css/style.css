@@ -68,3 +68,75 @@ input, button {
   text-align: center;
   color: #e00000;
 } */
+
+.dashboard {
+  display: grid;
+  border: solid black;
+  grid-template-columns: 300px 300px 300px 300px;
+  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-gap: 20px;
+  height: 1000px;
+  grid-template-areas: 
+  "dashboard dashboard dashboard dashboard"
+  "game-heading game-heading game-heading game-heading"
+  "gamelist gamelist standings standings"
+  "gamelist gamelist standings standings"
+  "gamelist gamelist standings standings"
+  "gamelist gamelist standings standings";
+}
+
+.dashboard-title {
+  display: grid;
+  grid-area: dashboard;
+  border: 5px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.games {
+  display: grid;
+  height: 850px;
+  border: 5px solid black;
+  grid-template-columns: 100px 100px 100px 100px 100px;
+  grid-template-rows: 50px 50px 100px 100px 100px 100px;
+  border-radius: 3px;
+  grid-area: gamelist;
+  grid-gap: 20px;
+  justify-content: center;
+  grid-template-areas: 
+  "header header header header header" 
+  "games games games games games" 
+  "games games games games games" 
+  "games games games games games" 
+  "games games games games games" 
+}
+
+.game-title {
+  display: grid;
+  border: 5px solid black;
+  grid-area: header;
+  justify-content: center;
+
+}
+
+.game-list {
+  display: grid;
+  border: 5px solid black;
+  height: 700px;
+  grid-area: games;
+}
+
+.one-game {
+  display: grid;
+  border: solid orange;
+  max-height: 112px;
+  max-width: 65px;
+}
+
+.standings {
+  display: grid;
+  border: 5px solid black;
+  border-radius: 3px;
+  grid-area: standings;
+  justify-content: center;
+}

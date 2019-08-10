@@ -83,7 +83,7 @@ class LoginForm extends React.Component {
   }
 
   checkBcrypt(password, salt) {
-    bcrypt.hash(password, salt, function (err, hash) {
+    bcrypt.hash(password, salt, (err, hash) => {
       console.log('hash is', hash)
     });
   }
@@ -108,7 +108,12 @@ class LoginForm extends React.Component {
           </div>
 
           <div className="equal-space-buttons">
+            <Link to="/dashboard">
+              <button className="btn btn-danger" >To Dashboard</button>
+            </Link>
+
             <button type="submit" className="btn btn-danger" value="Login" onClick={this.handleLogin}>Login</button>
+
 
             <Link to="/createuser">
               <button className="btn btn-danger" >Sign Up</button>
