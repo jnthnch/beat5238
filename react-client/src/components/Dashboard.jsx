@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="games">
-          <p className="game-title">Games</p>
+          <p className="games-header">Games</p>
           <div className="game-lines">
             <div className="game-lines-text">
               <text className="spread">spread</text>
@@ -23,10 +23,18 @@ class Dashboard extends React.Component {
             </div>
           </div>
           <div className="game-list">
-            <div className="single-game">game</div>
-            <div className="single-game">game</div>
-            <div className="single-game">game</div>
-            <div className="single-game">game</div>
+            <div className="single-game">
+              <h3>game</h3>
+            </div>
+            <div className="single-game">
+              <h3>game</h3>
+            </div>
+            <div className="single-game">
+              <h3>game</h3>
+            </div>
+            <div className="single-game">
+              <h3>game</h3>
+            </div>
           </div>
         </div>
 
