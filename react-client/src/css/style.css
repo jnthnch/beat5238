@@ -124,12 +124,26 @@ input, button {
 .game-lines {
   display: grid;
   border: 5px solid pink;
+  padding: 5px;
   grid-area: game-lines;
   justify-content: end;
   height: 50px;
   grid-template-columns: 350px 360px;
   grid-template-areas: 
   "blank-space game-line-text"
+}
+
+.spread {
+  border: solid brown;
+}
+
+.money-line {
+  border: solid brown;
+}
+
+.total {
+  border: solid brown;
+
 }
 
 .game-lines-text {
@@ -142,6 +156,7 @@ input, button {
 
 .game-list {
   display: grid;
+  padding: 10px;
   border: 5px solid grey;
   height: 700px;
   grid-area: games;
@@ -163,7 +178,9 @@ input, button {
   display: grid;
   grid-area: kickoff-time;
   justify-items: center;
-
+  font-size: 12px;
+  font-weight: 900;
+  align-content: center;
 }
 
 .game-teams {
@@ -174,24 +191,31 @@ input, button {
 
 .game-spread {
   display: grid;
+  border: solid brown;
   grid-area: spread;
   font-size: 12px;
   justify-content: center;
+  align-content: space-between;
 }
 
 .moneyline {
   display: grid;
+  border: solid brown;
+
   grid-area: moneyline;
   font-size: 12px;
   justify-content: center;
-
+  align-content: space-between;
 }
 
 .totals-line {
   display: grid;
+  border: solid brown;
+
   grid-area: totals-line;
   font-size: 12px;
   justify-content: center;
+  align-content: space-between;
 } 
 
 .standings {
