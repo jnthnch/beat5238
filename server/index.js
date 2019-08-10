@@ -42,6 +42,11 @@ app.get('/users', function (req, res) {
   });
 });
 
+// so we can enter http://localhost:3000/dashboard
+app.get('/dashboard', function (req, res) {
+  res.sendfile(path.resolve(__dirname + '/../react-client/dist', 'index.html'));
+})
+
 // check for password
 app.get('/users/:username', function (req, res) {
   let username = req.params.username
