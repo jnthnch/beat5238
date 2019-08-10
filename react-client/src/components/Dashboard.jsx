@@ -24,16 +24,36 @@ class Dashboard extends React.Component {
           </div>
           <div className="game-list">
             <div className="single-game">
-              <h3>game</h3>
+              <div className="game-time">
+                <text>8/8/19</text>
+                <text>4:00 PM</text>
+              </div>
+              <div className="game-teams">
+                <text>New York Jets</text>
+                <text>New York Giants</text>
+              </div>
+              <div className="game-spread">
+                <text>+4.5 (-110)</text>
+                <text>-4.5 (-110)</text>
+              </div>
+              <div className="moneyline">
+                <text>+185</text>
+                <text>-225</text>
+              </div>
+              <div className="totals-line">
+                <text>O33.5 (-110)</text>
+                <text>U33.5 (-110)</text>
+              </div>
+
             </div>
             <div className="single-game">
-              <h3>game</h3>
+              <text>game</text>
             </div>
             <div className="single-game">
-              <h3>game</h3>
+              <text>game</text>
             </div>
             <div className="single-game">
-              <h3>game</h3>
+              <text>game</text>
             </div>
           </div>
         </div>

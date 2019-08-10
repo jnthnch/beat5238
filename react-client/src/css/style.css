@@ -127,7 +127,7 @@ input, button {
   grid-area: game-lines;
   justify-content: end;
   height: 50px;
-  grid-template-columns: 230px 1fr;
+  grid-template-columns: 350px 360px;
   grid-template-areas: 
   "blank-space game-line-text"
 }
@@ -150,13 +150,49 @@ input, button {
 .single-game {
   display: grid;
   border: solid orange;
+  padding: 5px;
   background-color: #ededed;
-  grid-template-columns: 110px 280px 1fr 1fr 1fr;
+  grid-template-columns: 110px 240px 1fr 1fr 1fr;
   max-height: 65px;
   width: 100%;
   grid-template-areas: 
-  "kickoff-time teams spread moneyline total"
+  "kickoff-time teams spread moneyline totals-line"
 }
+
+.game-time {
+  display: grid;
+  grid-area: kickoff-time;
+  justify-items: center;
+
+}
+
+.game-teams {
+  display: grid;
+  grid-area: teams;
+  justify-content: center;
+}
+
+.game-spread {
+  display: grid;
+  grid-area: spread;
+  font-size: 12px;
+  justify-content: center;
+}
+
+.moneyline {
+  display: grid;
+  grid-area: moneyline;
+  font-size: 12px;
+  justify-content: center;
+
+}
+
+.totals-line {
+  display: grid;
+  grid-area: totals-line;
+  font-size: 12px;
+  justify-content: center;
+} 
 
 .standings {
   display: grid;
