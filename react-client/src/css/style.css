@@ -78,7 +78,6 @@ input, button {
   height: 1000px;
   grid-template-areas: 
   "dashboard dashboard dashboard dashboard"
-  "game-heading game-heading game-heading game-heading"
   "gamelist gamelist standings standings"
   "gamelist gamelist standings standings"
   "gamelist gamelist standings standings"
@@ -96,15 +95,16 @@ input, button {
 .games {
   display: grid;
   height: 850px;
-  border: 5px solid black;
+  border: 5px solid red;
   grid-template-columns: 100px 100px 100px 100px 100px;
   grid-template-rows: 50px 50px 100px 100px 100px 100px;
   border-radius: 3px;
   grid-area: gamelist;
-  grid-gap: 20px;
+  grid-gap: 10px;
   justify-content: center;
   grid-template-areas: 
-  "header header header header header" 
+  "header header header header header"
+  "game-lines game-lines game-lines game-lines game-lines" 
   "games games games games games" 
   "games games games games games" 
   "games games games games games" 
@@ -113,20 +113,38 @@ input, button {
 
 .game-title {
   display: grid;
-  border: 5px solid black;
+  border: 5px solid rosybrown;
   grid-area: header;
   justify-content: center;
+}
 
+.game-lines {
+  display: grid;
+  border: 5px solid pink;
+  grid-area: game-lines;
+  justify-content: end;
+  height: 50px;
+  grid-template-columns: 230px 1fr;
+  grid-template-areas: 
+  "blank-space game-line-text"
+}
+
+.game-lines-text {
+  border: 5px solid purple;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  grid-area: game-line-text
 }
 
 .game-list {
   display: grid;
-  border: 5px solid black;
+  border: 5px solid grey;
   height: 700px;
   grid-area: games;
 }
 
-.one-game {
+.single-game {
   display: grid;
   border: solid orange;
   max-height: 112px;
@@ -135,7 +153,7 @@ input, button {
 
 .standings {
   display: grid;
-  border: 5px solid black;
+  border: 5px solid blue;
   border-radius: 3px;
   grid-area: standings;
   justify-content: center;

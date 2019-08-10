@@ -15,12 +15,18 @@ class Dashboard extends React.Component {
 
         <div className="games">
           <p className="game-title">Games</p>
-          {/* <div className="game-headings">Heading</div> */}
+          <div className="game-lines">
+            <div className="game-lines-text">
+              <text className="spread">spread</text>
+              <text className="money-line">moneyline</text>
+              <text className="total">total</text>
+            </div>
+          </div>
           <div className="game-list">
-            <div className="one-game">game</div>
-            <div className="one-game">game</div>
-            <div className="one-game">game</div>
-            <div className="one-game">game</div>
+            <div className="single-game">game</div>
+            <div className="single-game">game</div>
+            <div className="single-game">game</div>
+            <div className="single-game">game</div>
           </div>
         </div>
 
