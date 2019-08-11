@@ -75,7 +75,8 @@ input, button {
   grid-template-columns: 375px 375px 225px 225px;
   grid-template-rows: 100px 100px 100px 100px 100px;
   grid-gap: 20px;
-  height: 1000px;
+  padding: 5px;
+  height: auto;
   grid-template-areas: 
   "dashboard dashboard dashboard dashboard"
   "gamelist gamelist standings standings"
@@ -87,7 +88,7 @@ input, button {
 .dashboard-title {
   display: grid;
   grid-area: dashboard;
-  border: 5px solid black;
+  border: 5px solid teal;
   justify-content: center;
   align-items: center;
 }
@@ -96,7 +97,7 @@ input, button {
   display: grid;
   background-color: #c2c2c2;
   padding: 10px;
-  height: 850px;
+  height: auto;
   width: 100%;
   border: 5px solid red;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -124,13 +125,22 @@ input, button {
 .game-lines {
   display: grid;
   border: 5px solid pink;
-  padding: 5px;
   grid-area: game-lines;
+  padding-right: 10px;
   justify-content: end;
   height: 50px;
   grid-template-columns: 350px 360px;
   grid-template-areas: 
   "blank-space game-line-text"
+}
+
+.game-lines-text {
+  border: 5px solid purple;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  grid-area: game-line-text
 }
 
 .spread {
@@ -143,22 +153,15 @@ input, button {
 
 .total {
   border: solid brown;
-
-}
-
-.game-lines-text {
-  border: 5px solid purple;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  grid-area: game-line-text
 }
 
 .game-list {
   display: grid;
   padding: 10px;
-  border: 5px solid grey;
-  height: 700px;
+  grid-gap: 15px;
+  border: 5px solid green;
+  height: auto;
+  align-content: start;
   grid-area: games;
 }
 
@@ -186,7 +189,7 @@ input, button {
 .game-teams {
   display: grid;
   grid-area: teams;
-  justify-content: center;
+  justify-content: start;
 }
 
 .game-spread {
