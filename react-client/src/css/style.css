@@ -70,10 +70,12 @@ input, button {
 } */
 
 .dashboard {
+  font-family: 'Noto Serif JP', serif;
+  background-color: #ededed;
   display: grid;
-  border: solid black;
+  border: solid 5px black;
   grid-template-columns: 375px 375px 225px 225px;
-  grid-template-rows: 100px 100px 100px 100px 100px;
+  grid-template-rows: 100px 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   padding: 5px;
   height: auto;
@@ -81,12 +83,13 @@ input, button {
   "dashboard dashboard dashboard dashboard"
   "gamelist gamelist standings standings"
   "gamelist gamelist standings standings"
-  "gamelist gamelist standings standings"
-  "gamelist gamelist standings standings";
+  "gamelist gamelist current-selections current-selections"
+  "gamelist gamelist current-selections current-selections";
 }
 
 .dashboard-title {
   display: grid;
+  background-color: #fff;
   grid-area: dashboard;
   border: 5px solid teal;
   justify-content: center;
@@ -95,13 +98,12 @@ input, button {
 
 .games {
   display: grid;
-  background-color: #c2c2c2;
   padding: 10px;
   height: auto;
   width: 100%;
   border: 5px solid red;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 50px 50px 100px 100px 100px 100px;
+  grid-template-rows: 50px 50px 1fr 1fr 1fr 1fr;
   border-radius: 3px;
   grid-area: gamelist;
   grid-gap: 10px;
@@ -117,6 +119,9 @@ input, button {
 
 .games-header {
   display: grid;
+  font-family: 'Rubik', sans-serif;
+  color: #000000;
+  background-color: #fff;
   border: 5px solid rosybrown;
   grid-area: header;
   justify-content: center;
@@ -136,7 +141,10 @@ input, button {
 
 .game-lines-text {
   border: 5px solid purple;
+  font-family: 'Rubik', sans-serif;
+  color: grey;
   height: 100%;
+  margin-left: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
@@ -167,18 +175,23 @@ input, button {
 
 .single-game {
   display: grid;
+  background-color: #fff;
   border: solid orange;
-  padding: 5px;
-  background-color: #ededed;
   grid-template-columns: 110px 240px 1fr 1fr 1fr;
-  max-height: 65px;
-  width: 100%;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: auto;
   grid-template-areas: 
   "kickoff-time teams spread moneyline totals-line"
+  "kickoff-time teams spread moneyline totals-line"
+  "single-game-footer single-game-footer single-game-footer single-game-footer single-game-footer"
 }
 
 .game-time {
   display: grid;
+  font-family: 'Rubik', sans-serif;
+  color: #404040;
+  background-color: #e3e3e3;
+  margin-right: 25px;
   grid-area: kickoff-time;
   justify-items: center;
   font-size: 12px;
@@ -188,12 +201,16 @@ input, button {
 
 .game-teams {
   display: grid;
+  font-family: 'Rubik', sans-serif;
+  color: #404040;
+  font-size: 12px;
   grid-area: teams;
   justify-content: start;
 }
 
 .game-spread {
   display: grid;
+  font-family: 'Rubik', sans-serif;
   border: solid brown;
   grid-area: spread;
   font-size: 12px;
@@ -203,8 +220,8 @@ input, button {
 
 .moneyline {
   display: grid;
+  font-family: 'Rubik', sans-serif;
   border: solid brown;
-
   grid-area: moneyline;
   font-size: 12px;
   justify-content: center;
@@ -213,19 +230,47 @@ input, button {
 
 .totals-line {
   display: grid;
+  font-family: 'Rubik', sans-serif;
   border: solid brown;
-
   grid-area: totals-line;
   font-size: 12px;
   justify-content: center;
   align-content: space-between;
 } 
 
+.single-game-footer {
+  display: flex;
+  margin-left: 10px;
+  background-color: #fff;
+  font-size: 11px;
+  font-family: 'Rubik', sans-serif;
+  color: #404040;
+  grid-area: single-game-footer;
+  align-items: center;
+}
+
+.bolded-city {
+  font-weight: 900;
+}
+
 .standings {
   display: grid;
+  background-color: #fff;
   border: 5px solid blue;
   border-radius: 3px;
+  height: 100px;
   grid-area: standings;
   justify-content: center;
 }
+
+.current-selections {
+  display: grid;
+  background-color: #fff;
+  border: 5px solid blue;
+  border-radius: 3px;
+  height: 100px;
+  grid-area: current-selections;
+  justify-content: center;
+}
+
 

@@ -14,12 +14,12 @@ class Dashboard extends React.Component {
         </div>
 
         <div className="games">
-          <p className="games-header">Games</p>
+          <p className="games-header">NFL Games (16) - Week 1</p>
           <div className="game-lines">
             <div className="game-lines-text">
-              <text className="spread">spread</text>
-              <text className="money-line">moneyline</text>
-              <text className="total">total</text>
+              <text className="spread">Spread</text>
+              <text className="money-line">Moneyline</text>
+              <text className="total">Total</text>
             </div>
           </div>
           <div className="game-list">
@@ -44,6 +44,9 @@ class Dashboard extends React.Component {
                 <text>O46.0 (-110)</text>
                 <text>U46.0 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Soldier Field</b>{` - Chicago, IL`}</text>
+              </div>
             </div>
 
             <div className="single-game">
@@ -66,6 +69,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O47.5 (-110)</text>
                 <text>U47.5 (-110)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">U.S. Bank Stadium</b>{` - Minneapolis, MN`}</text>
               </div>
             </div>
 
@@ -90,6 +96,10 @@ class Dashboard extends React.Component {
                 <text>O37.5 (-110)</text>
                 <text>U37.5 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Hard Rock Stadium</b>{` - Miami Gardens, FL`}</text>
+              </div>
+
             </div>
 
             <div className="single-game">
@@ -112,6 +122,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O38.5 (-110)</text>
                 <text>U38.5 (-110)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">MetLife Stadium</b>{` - East Rutherford, NJ`}</text>
               </div>
             </div>
 
@@ -136,6 +149,9 @@ class Dashboard extends React.Component {
                 <text>O52.5 (-110)</text>
                 <text>U52.5 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">TIAA Bank Field</b>{` - Jacksonville, FL`}</text>
+              </div>
             </div>
 
             <div className="single-game">
@@ -158,6 +174,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O51.0 (-105)</text>
                 <text>U51.0 (-115)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Bank of America Stadium</b>{` - Charlotte, NC`}</text>
               </div>
             </div>
 
@@ -182,6 +201,9 @@ class Dashboard extends React.Component {
                 <text>O45.5 (-110)</text>
                 <text>U45.5 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">FirstEnergy Stadium</b>{` - Cleveland, OH`}</text>
+              </div>
             </div>
 
             <div className="single-game">
@@ -204,6 +226,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O46.0 (-110)</text>
                 <text>U46.0 (-110)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Lincoln Financial Field</b>{` - Philadelphia, PA`}</text>
               </div>
             </div>
 
@@ -228,6 +253,9 @@ class Dashboard extends React.Component {
                 <text>O43.5 (-110)</text>
                 <text>U43.5 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">CenturyLink Field</b>{` - Seattle, WA`}</text>
+              </div>
             </div>
 
             <div className="single-game">
@@ -250,6 +278,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O47.5 (-110)</text>
                 <text>U47.5 (-110)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Dignity Health Sports Park</b>{` - Carson, CA`}</text>
               </div>
             </div>
 
@@ -274,6 +305,9 @@ class Dashboard extends React.Component {
                 <text>O47.0 (-110)</text>
                 <text>U47.0 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">State Farm Stadium</b>{` - Glendale, AZ`}</text>
+              </div>
             </div>
 
             <div className="single-game">
@@ -296,6 +330,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O46.0 (-110)</text>
                 <text>U46.0 (-110)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">AT&T Stadium</b>{` - Arlington, TX`}</text>
               </div>
             </div>
 
@@ -320,28 +357,8 @@ class Dashboard extends React.Component {
                 <text>O49.0 (-110)</text>
                 <text>U49.0 (-110)</text>
               </div>
-            </div>
-
-            <div className="single-game">
-              <div className="game-time">
-                <text>9/8/19</text>
-                <text>5:20 PM</text>
-              </div>
-              <div className="game-teams">
-                <text>Pittsburgh Steelers</text>
-                <text>New England Patriots</text>
-              </div>
-              <div className="game-spread">
-                <text>+6.0 (-110)</text>
-                <text>-6.0 (-110)</text>
-              </div>
-              <div className="moneyline">
-                <text>+215</text>
-                <text>-260</text>
-              </div>
-              <div className="totals-line">
-                <text>O51.5 (-110)</text>
-                <text>U51.5 (-110)</text>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Raymond James Stadium</b>{` - Tampa, FL`}</text>
               </div>
             </div>
 
@@ -366,28 +383,8 @@ class Dashboard extends React.Component {
                 <text>O51.5 (-110)</text>
                 <text>U51.5 (-110)</text>
               </div>
-            </div>
-
-            <div className="single-game">
-              <div className="game-time">
-                <text>9/9/19</text>
-                <text>4:10 PM</text>
-              </div>
-              <div className="game-teams">
-                <text>Houston Texans</text>
-                <text>New Orleans Saints</text>
-              </div>
-              <div className="game-spread">
-                <text>+7.0 (-120)</text>
-                <text>-7.0 (EVEN)</text>
-              </div>
-              <div className="moneyline">
-                <text>+250</text>
-                <text>-300</text>
-              </div>
-              <div className="totals-line">
-                <text>O53.5 (-110)</text>
-                <text>U53.5 (-110)</text>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Gillette Stadium</b>{` - Foxboro, MA`}</text>
               </div>
             </div>
 
@@ -411,6 +408,9 @@ class Dashboard extends React.Component {
               <div className="totals-line">
                 <text>O53.5 (-110)</text>
                 <text>U53.5 (-110)</text>
+              </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Mercedes-Benz Superdome</b>{` - New Orleans, LA`}</text>
               </div>
             </div>
 
@@ -435,6 +435,9 @@ class Dashboard extends React.Component {
                 <text>O43.5 (-110)</text>
                 <text>U43.5 (-110)</text>
               </div>
+              <div className="single-game-footer">
+                <text><b className="bolded-city">Oakland Coliseum</b>{` - Oakland, CA`}</text>
+              </div>
             </div>
 
           </div>
@@ -442,6 +445,10 @@ class Dashboard extends React.Component {
 
         <div className="standings">
           <p>Standings</p>
+        </div>
+
+        <div className="current-selections">
+          <p>Current Selections</p>
         </div>
       </div>
     )
