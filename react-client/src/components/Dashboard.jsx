@@ -35,14 +35,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+3.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-3.5 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+150</text>
+                <span className="custom-separator"></span>
                 <text>-170</text>
               </div>
               <div className="totals-line">
                 <text>O46.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U46.0 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -62,14 +65,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+4.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-4.0 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+165</text>
+                <span className="custom-separator"></span>
                 <text>-190</text>
               </div>
               <div className="totals-line">
                 <text>O47.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U47.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -89,14 +95,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+4.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-4.5 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>-220</text>
+                <span className="custom-separator"></span>
                 <text>+185</text>
               </div>
               <div className="totals-line">
                 <text>O37.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U37.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -117,14 +126,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+3.5 (EVEN)</text>
+                <span className="custom-separator"></span>
                 <text>-3.0 (-120)</text>
               </div>
               <div className="moneyline">
                 <text>+150</text>
+                <span className="custom-separator"></span>
                 <text>-170</text>
               </div>
               <div className="totals-line">
                 <text>O38.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U38.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -144,14 +156,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>-3.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>+3.5 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>-190</text>
+                <span className="custom-separator"></span>
                 <text>+165</text>
               </div>
               <div className="totals-line">
                 <text>O52.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U52.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -171,14 +186,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>-3.0 (-105)</text>
+                <span className="custom-separator"></span>
                 <text>+3.0 (-115)</text>
               </div>
               <div className="moneyline">
                 <text>-155</text>
+                <span className="custom-separator"></span>
                 <text>+135</text>
               </div>
               <div className="totals-line">
                 <text>O51.0 (-105)</text>
+                <span className="custom-separator"></span>
                 <text>U51.0 (-115)</text>
               </div>
               <div className="single-game-footer">
@@ -198,14 +216,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+5.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-5.5 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+205</text>
+                <span className="custom-separator"></span>
                 <text>-245</text>
               </div>
               <div className="totals-line">
                 <text>O45.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U45.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -225,14 +246,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+8.0 (-105)</text>
+                <span className="custom-separator"></span>
                 <text>-8.0 (-115)</text>
               </div>
               <div className="moneyline">
                 <text>+310</text>
+                <span className="custom-separator"></span>
                 <text>-420</text>
               </div>
               <div className="totals-line">
                 <text>O46.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U46.0 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -252,14 +276,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+9.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-9.5 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+320</text>
+                <span className="custom-separator"></span>
                 <text>-440</text>
               </div>
               <div className="totals-line">
                 <text>O43.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U43.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -279,14 +306,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+3.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-3.0 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+140</text>
+                <span className="custom-separator"></span>
                 <text>-160</text>
               </div>
               <div className="totals-line">
                 <text>O47.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U47.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -306,14 +336,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>-2.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>+2.5 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>-135</text>
+                <span className="custom-separator"></span>
                 <text>+115</text>
               </div>
               <div className="totals-line">
                 <text>O47.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U47.0 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -333,14 +366,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+8.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-8.0 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+290</text>
+                <span className="custom-separator"></span>
                 <text>-380</text>
               </div>
               <div className="totals-line">
                 <text>O46.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U46.0 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -360,14 +396,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+1.0 (-115)</text>
+                <span className="custom-separator"></span>
                 <text>-1.0 (-105)</text>
               </div>
               <div className="moneyline">
                 <text>-105</text>
+                <span className="custom-separator"></span>
                 <text>-115</text>
               </div>
               <div className="totals-line">
                 <text>O49.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U49.0 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -387,14 +426,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+6.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-6.0 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+215</text>
+                <span className="custom-separator"></span>
                 <text>-260</text>
               </div>
               <div className="totals-line">
                 <text>O51.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U51.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -414,14 +456,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+7.0 (-120)</text>
+                <span className="custom-separator"></span>
                 <text>-7.0 (EVEN)</text>
               </div>
               <div className="moneyline">
                 <text>+250</text>
+                <span className="custom-separator"></span>
                 <text>-300</text>
               </div>
               <div className="totals-line">
                 <text>O53.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U53.5 (-110)</text>
               </div>
               <div className="single-game-footer">
@@ -441,14 +486,17 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-spread">
                 <text>+2.0 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>-2.0 (-110)</text>
               </div>
               <div className="moneyline">
                 <text>+105</text>
+                <span className="custom-separator"></span>
                 <text>-125</text>
               </div>
               <div className="totals-line">
                 <text>O43.5 (-110)</text>
+                <span className="custom-separator"></span>
                 <text>U43.5 (-110)</text>
               </div>
               <div className="single-game-footer">

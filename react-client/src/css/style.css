@@ -209,37 +209,64 @@ input, button {
   align-content: space-around;
 }
 
+.game-teams .custom-separator {
+  border-bottom: 1px solid #d1d1d1;
+  width: 200%;
+}
+
 .game-spread {
   display: grid;
   font-family: 'Rubik', sans-serif;
-  border: solid brown;
+  border: 1px solid #d1d1d1;
   grid-area: spread;
   font-size: 12px;
   text-align: center;
+  align-content: space-around;
+}
 
+.game-spread .custom-separator {
+  border-bottom: 1px solid #d1d1d1;
+  width: 100%;
+}
+
+.game-spread :hover {
+  background-color: #e3e3e3;
+  cursor: pointer;
 }
 
 .moneyline {
   display: grid;
   font-family: 'Rubik', sans-serif;
-  border: solid brown;
+  border: 1px solid #d1d1d1;
   grid-area: moneyline;
   font-size: 12px;
   text-align: center;
+  align-content: space-around;
+}
+
+.moneyline .custom-separator {
+  border-bottom: 1px solid #d1d1d1;
+  width: 100%;
 }
 
 .totals-line {
   display: grid;
   font-family: 'Rubik', sans-serif;
-  border: solid brown;
+  border: 1px solid #d1d1d1;
   grid-area: totals-line;
   font-size: 12px;
   text-align: center;
+  align-content: space-around;
 }
 
-.custom-separator {
+.totals-line .custom-separator {
   border-bottom: 1px solid #d1d1d1;
-  width: 200%;
+  width: 100%;
+}
+
+.totals-line :hover {
+  background-color: #e3e3e3;
+  cursor: pointer;
 }
 
 .single-game-footer {
