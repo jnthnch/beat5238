@@ -30,6 +30,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Green Bay Packers</text>
+                <span className="custom-separator"></span>
                 <text>Chicago Bears</text>
               </div>
               <div className="game-spread">
@@ -56,6 +57,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Atlanta Falcons</text>
+                <span className="custom-separator"></span>
                 <text>Minnesota Vikings</text>
               </div>
               <div className="game-spread">
@@ -82,6 +84,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Baltimore Ravens</text>
+                <span className="custom-separator"></span>
                 <text>Miami Dolphins</text>
               </div>
               <div className="game-spread">
@@ -109,6 +112,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Buffalo Bills</text>
+                <span className="custom-separator"></span>
                 <text>New York Jets</text>
               </div>
               <div className="game-spread">
@@ -135,6 +139,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Kansas City Chiefs</text>
+                <span className="custom-separator"></span>
                 <text>Jacksonville Jaguars</text>
               </div>
               <div className="game-spread">
@@ -161,6 +166,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Los Angeles Rams</text>
+                <span className="custom-separator"></span>
                 <text>Carolina Panthers</text>
               </div>
               <div className="game-spread">
@@ -187,6 +193,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Tennessee Titans</text>
+                <span className="custom-separator"></span>
                 <text>Cleveland Browns</text>
               </div>
               <div className="game-spread">
@@ -213,6 +220,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Washington Redskins</text>
+                <span className="custom-separator"></span>
                 <text>Philadelphia Eagles</text>
               </div>
               <div className="game-spread">
@@ -239,6 +247,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Cincinnati Bengals</text>
+                <span className="custom-separator"></span>
                 <text>Seattle Seahawks</text>
               </div>
               <div className="game-spread">
@@ -265,6 +274,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Indianapolis Colts</text>
+                <span className="custom-separator"></span>
                 <text>Los Angeles Chargers</text>
               </div>
               <div className="game-spread">
@@ -291,6 +301,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Detroit Lions</text>
+                <span className="custom-separator"></span>
                 <text>Arizona Cardinals</text>
               </div>
               <div className="game-spread">
@@ -317,6 +328,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>New York Giants</text>
+                <span className="custom-separator"></span>
                 <text>Dallas Cowboys</text>
               </div>
               <div className="game-spread">
@@ -343,6 +355,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>San Francisco 49ers</text>
+                <span className="custom-separator"></span>
                 <text>Tampa Bay Buccaneers</text>
               </div>
               <div className="game-spread">
@@ -369,6 +382,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Pittsburgh Steelers</text>
+                <span className="custom-separator"></span>
                 <text>New England Patriots</text>
               </div>
               <div className="game-spread">
@@ -395,6 +409,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Houston Texans</text>
+                <span className="custom-separator"></span>
                 <text>New Orleans Saints</text>
               </div>
               <div className="game-spread">
@@ -421,6 +436,7 @@ class Dashboard extends React.Component {
               </div>
               <div className="game-teams">
                 <text>Denver Broncos</text>
+                <span className="custom-separator"></span>
                 <text>Oakland Raiders</text>
               </div>
               <div className="game-spread">

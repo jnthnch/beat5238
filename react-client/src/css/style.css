@@ -206,7 +206,7 @@ input, button {
   font-size: 12px;
   grid-area: teams;
   justify-content: start;
-  border-bottom: 1px solid red;
+  align-content: space-around;
 }
 
 .game-spread {
@@ -215,8 +215,8 @@ input, button {
   border: solid brown;
   grid-area: spread;
   font-size: 12px;
-  justify-content: center;
-  align-content: space-between;
+  text-align: center;
+
 }
 
 .moneyline {
@@ -225,8 +225,7 @@ input, button {
   border: solid brown;
   grid-area: moneyline;
   font-size: 12px;
-  justify-content: center;
-  align-content: space-between;
+  text-align: center;
 }
 
 .totals-line {
@@ -235,17 +234,22 @@ input, button {
   border: solid brown;
   grid-area: totals-line;
   font-size: 12px;
-  justify-content: center;
-  align-content: space-between;
-} 
+  text-align: center;
+}
+
+.custom-separator {
+  border-bottom: 1px solid #d1d1d1;
+  width: 200%;
+}
 
 .single-game-footer {
   display: flex;
-  margin-left: 10px;
+  padding-left: 10px;
   background-color: #fff;
   font-size: 11px;
   font-family: 'Rubik', sans-serif;
   color: #404040;
+  background-color: #e3e3e3;
   grid-area: single-game-footer;
   align-items: center;
 }
