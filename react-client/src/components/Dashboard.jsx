@@ -4,6 +4,11 @@ import '../css/style.css'
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      data: {
+
+      },
+    }
   };
 
   render() {
@@ -24,29 +29,35 @@ class Dashboard extends React.Component {
           </div>
           <div className="game-list">
             <div className="single-game">
-              <div className="game-time">
-                <text>9/5/19</text>
-                <text>5:20 PM</text>
-              </div>
-              <div className="game-teams">
-                <text>Green Bay Packers</text>
-                <span className="custom-separator"></span>
-                <text>Chicago Bears</text>
-              </div>
-              <div className="game-spread">
-                <text>+3.5 (-110)</text>
-                <span className="custom-separator"></span>
-                <text>-3.5 (-110)</text>
-              </div>
-              <div className="moneyline">
-                <text>+150</text>
-                <span className="custom-separator"></span>
-                <text>-170</text>
-              </div>
-              <div className="totals-line">
-                <text>O46.0 (-110)</text>
-                <span className="custom-separator"></span>
-                <text>U46.0 (-110)</text>
+              <div className="single-game-content">
+                <div className="game-time">
+                  {`9/5/19\n5:20 PM`}
+                </div>
+                <div className="game-teams">
+                  <div className="game-teams-inner">
+                    <div className="away-team">
+                      Green Bay Packers
+                    </div>
+                    <div className="home-team">
+                      Chicago Bears
+                    </div>
+                  </div>
+                </div>
+                <div className="game-spread">
+                  <text>+3.5 (-110)</text>
+                  <span className="custom-separator"></span>
+                  <text>-3.5 (-110)</text>
+                </div>
+                <div className="moneyline">
+                  <text>+150</text>
+                  <span className="custom-separator"></span>
+                  <text>-170</text>
+                </div>
+                <div className="totals-line">
+                  <text>O46.0 (-110)</text>
+                  <span className="custom-separator"></span>
+                  <text>U46.0 (-110)</text>
+                </div>
               </div>
               <div className="single-game-footer">
                 <text><b className="bolded-city">Soldier Field</b>{` - Chicago, IL`}</text>
