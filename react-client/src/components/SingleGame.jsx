@@ -25,16 +25,16 @@ const SingleGame = (props) => {
         <div className="moneyline">
           <text>{props.game.awayML}</text>
           <span className="custom-separator"></span>
-          <text>-{props.game.homeML}</text>
+          <text>{props.game.homeML}</text>
         </div>
         <div className="totals-line">
-          <text>O46.0 (-110)</text>
+          <text>{props.game.over}</text>
           <span className="custom-separator"></span>
-          <text>U46.0 (-110)</text>
+          <text>{props.game.under}</text>
         </div>
       </div>
       <div className="single-game-footer">
-        <text><b className="bolded-city">Soldier Field</b>{` - Chicago, IL`}</text>
+        <text><b className="bolded-city">{props.game.location[0]}</b>{` - ${props.game.location[1]}`}</text>
       </div>
     </div>
   )

@@ -245,6 +245,7 @@ input, button {
 
 .game-spread {
   display: grid;
+  height: 100%;
   background-color: #fff;
   font-family: 'Rubik', sans-serif;
   border-left: 1px solid #d1d1d1;
@@ -255,21 +256,6 @@ input, button {
   align-content: space-around;
 }
 
-.game-spread:nth-child(1) {
-  /* top: 25%; */
-  height: 49px;
-  background-color: yellow;
-}
-
-.game-spread:nth-child(2) {
-  /* top: 50%; */
-  height: 2%;
-}
-
-.game-spread:nth-child(3) {
-  /* top: 75%; */
-  height: 49%;
-}
 
 .game-spread .custom-separator {
   border-bottom: 1px solid #d1d1d1;
