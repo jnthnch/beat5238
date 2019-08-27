@@ -7,7 +7,7 @@ import NameForm from './components/NameForm.jsx';
 import UsernameDropdown from './components/UsernameDropdown.jsx';
 import GameList from './components/GameList.jsx';
 import Standings from './components/Standings.jsx';
-import GameSlate from './sample_data';
+// import GameSlate from './sample_data';
 
 
 // class App extends React.Component {

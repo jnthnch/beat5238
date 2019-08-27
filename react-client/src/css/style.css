@@ -249,12 +249,26 @@ input, button {
   font-family: 'Rubik', sans-serif;
   border-left: 1px solid #d1d1d1;
   margin-left: 1px;
-  margin-top: 10px;
-  margin-bottom: 10px;
   grid-area: spread;
   font-size: 12px;
   text-align: center;
   align-content: space-around;
+}
+
+.game-spread:nth-child(1) {
+  /* top: 25%; */
+  height: 49px;
+  background-color: yellow;
+}
+
+.game-spread:nth-child(2) {
+  /* top: 50%; */
+  height: 2%;
+}
+
+.game-spread:nth-child(3) {
+  /* top: 75%; */
+  height: 49%;
 }
 
 .game-spread .custom-separator {
