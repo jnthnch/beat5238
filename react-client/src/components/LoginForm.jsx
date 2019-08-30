@@ -4,16 +4,24 @@ import $ from 'jquery';
 // import bcrypt from '../../../bcrypt/hashing.js';
 import bcrypt from 'bcryptjs';
 
+// const buttonProps = {
+//   DANGER: 'danger',
+//   DEFAULT: 'btn',
+// }
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      username: '',
+      password: '',
+    };
+
     this.createUser = this.createUser.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-    this.checkPassword = this.checkPassword.bind(this);
-    this.checkBcrypt = this.checkBcrypt.bind(this);
+    // this.checkPassword = this.checkPassword.bind(this);
+    // this.checkBcrypt = this.checkBcrypt.bind(this);
   }
 
   createUser(event) {
@@ -53,41 +61,46 @@ class LoginForm extends React.Component {
 
   handleLogin(event) {
     console.log('pressed login')
+    console.log('state is', this.state)
     let usernameInput = this.state.username
     let passwordInput = this.state.password;
-    this.checkPassword(usernameInput, passwordInput);
+    // this.checkPassword(usernameInput, passwordInput);
   }
 
-  checkPassword(username, password) {
-    $.ajax({
-      type: "GET",
-      url: `/users/${username}`,
-      data: {
-        password: password
-      },
-      success: (data) => {
-        // get salt back from database
-        let dbPassword = data[0].password
-        //this.checkBcrypt(dbPassword, salt)
-        if (dbPassword === password) {
-          console.log('password matches!!!')
-          // TODO route to BETTING PAGE
-        } else {
-          alert('wrong password entered')
-        }
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    })
-  }
+  // checkPassword(username, password) {
+  //   $.ajax({
+  //     type: "GET",
+  //     url: `/users/${username}`,
+  //     data: {
+  //       password: password
+  //     },
+  //     success: (data) => {
+  //       // get salt back from database
+  //       let dbPassword = data[0].password
+  //       //this.checkBcrypt(dbPassword, salt)
+  //       if (dbPassword === password) {
+  //         console.log('password matches!!!')
+  //         // TODO route to BETTING PAGE
+  //       } else {
+  //         alert('wrong password entered')
+  //       }
+  //     },
+  //     error: (err) => {
+  //       console.log('err', err);
+  //     }
+  //   })
+  // }
 
-  checkBcrypt(password, salt) {
-    bcrypt.hash(password, salt, (err, hash) => {
-      console.log('hash is', hash)
-    });
-  }
+  // checkBcrypt(password, salt) {
+  //   bcrypt.hash(password, salt, (err, hash) => {
+  //     console.log('hash is', hash)
+  //   });
+  // }
 
+  // consider react final form, formik for library forms - why/why not to use them
+  // use library "classnames" to prevent classname collisions
+  // container components pattern - by redux creator Dan Abra
+  // build a promise library with native js and build a DOM tree
   render() {
     return (
       <div className="wrapper" >

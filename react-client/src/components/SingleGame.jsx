@@ -18,9 +18,9 @@ const SingleGame = (props) => {
           </div>
         </div>
         <div className="game-spread">
-          <text>{props.game.awaySpread}</text>
+          <div>{props.game.awaySpread}</div>
           <span className="custom-separator"></span>
-          <text>{props.game.homeSpread}</text>
+          <div>{props.game.homeSpread}</div>
         </div>
         <div className="moneyline">
           <text>{props.game.awayML}</text>

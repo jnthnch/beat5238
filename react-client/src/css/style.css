@@ -230,7 +230,6 @@ input, button {
 
 .game-teams .home-team {
   display: grid;
-  border: 1px solid green;
   align-content: center;
   height: 100%;
   justify-content: center;

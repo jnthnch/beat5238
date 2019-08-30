@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
+import bcrypt from 'bcryptjs';
+
 
 class CreateUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.submitter = this.submitter.bind(this);
+    this.createUser = this.createUser.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  submitter(event) {
-    console.log('submitter clicked', event);
+  createUser(event) {
     event.preventDefault();
     $.ajax({
       type: "POST",
@@ -27,7 +28,7 @@ class CreateUserForm extends React.Component {
         //TO DO: route to the next page? logged in
       },
       error: (err) => {
-        console.log('err', err);
+        throw ('could not create user', err);
       }
     })
   }
@@ -37,7 +38,6 @@ class CreateUserForm extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-    console.log('typing', event.target.value)
     this.setState({
       [name]: [value]
     })
@@ -52,7 +52,7 @@ class CreateUserForm extends React.Component {
         </h1>
 
         <div>
-          <form className="forms" onSubmit={e => this.submitter(e)}>
+          <form className="forms" onSubmit={e => this.createUser(e)}>
             <div className="equal-space-inputs">
               <label>
                 First Name:

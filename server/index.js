@@ -24,10 +24,6 @@ app.use(bodyParser.json())
 // UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
-
 // app.get('*', function (req, res) {
 //   res.sendFile(path.resolve(__dirname, '../react-client/dist/index.html'))
 // })
@@ -47,11 +43,42 @@ app.get('/dashboard', function (req, res) {
   res.sendfile(path.resolve(__dirname + '/../react-client/dist', 'index.html'));
 })
 
+checkPassword = (username, password) => {
+  $.ajax({
+    type: "GET",
+    url: `/users/${username}`,
+    data: {
+      password: password
+    },
+    success: (data) => {
+      // get salt back from database
+      let dbPassword = data[0].password
+      //this.checkBcrypt(dbPassword, salt)
+      if (dbPassword === password) {
+        console.log('password matches!!!')
+        // TODO route to BETTING PAGE
+      } else {
+        alert('wrong password entered')
+      }
+    },
+    error: (err) => {
+      console.log('err', err);
+    }
+  })
+}
+
+checkBcrypt = (password, salt) => {
+  bcrypt.hash(password, salt, (err, hash) => {
+    console.log('hash is', hash)
+  });
+}
+
 // check for password
 app.get('/users/:username', function (req, res) {
   let username = req.params.username
   users.getUser(username, function (err, data) {
     if (err) {
+      // dont send status code
       res.sendStatus(500);
     } else {
       res.json(data);
@@ -61,27 +88,14 @@ app.get('/users/:username', function (req, res) {
 
 app.post('/createuser', function (req, res) {
   let params = req.body;
-  console.log('params are:', params)
-  let username = Object.values(params)[2];
   let password = Object.values(params)[3];
   password = password[0];
-
-  // we want to pass params object that looks like this:
-  // params = {
-  //   firstName: [],
-  //   lastName: [],
-  //   username: [],
-  //   hashed_password: [],
-  //   salt: []
-  // }
-
   delete params['password'];
 
   bcrypt.genSalt(10, function (err, salt) {
     bcrypt.hash(password, salt, function (err, hash) {
       params['hashed_password'] = hash;
       params['salt'] = salt;
-      console.log('params inside are:', params);
       users.postUser(params, function (err, data) {
         if (err) {
           console.log('received an error', err)
@@ -92,17 +106,6 @@ app.post('/createuser', function (req, res) {
       });
     });
   });
-
-
-
-  // users.postRecord(username, function (err, data) {
-  //   if (err) {
-  //     console.log('received an error', err)
-  //     res.sendStatus(500);
-  //   } else {
-  //     console.log('success!');
-  //   }
-  // });
 });
 
 app.get('/games', function (req, res) {
