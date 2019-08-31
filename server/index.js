@@ -18,14 +18,8 @@ app.use(bodyParser.json())
 
 app.use(express.static(__dirname + '/../react-client/dist'));
 
-app.get('/users', function (req, res) {
-  users.selectAll(function (err, data) {
-    if (err) {
-      res.sendStatus(500);
-    } else {
-      res.json(data);
-    }
-  });
+app.listen(3000, function () {
+  console.log('listening on port 3000!');
 });
 
 // so we can go directly to http://localhost:3000/dashboard
@@ -62,23 +56,27 @@ app.post('/createuser', function (req, res) {
 
 // login from LoginForm
 app.post('/users/:username', function (req, res) {
-  let username = req.params.username
-  users.getUser(username, function (err, data) {
-    this.freeFunc();
+  let usernameSubmitted = req.body.username;
+  let passwordSubmitted = req.body.password;
+  users.getUser(usernameSubmitted, function (err, data) {
+    let db_salt = data[0].salt
+    let db_hashed_password = data[0].hashed_password;
 
     if (err) {
       // dont send status code
       res.sendStatus(500);
     } else {
-      console.log('hiiiii')
-      res.json(data);
+      bcrypt.hash(passwordSubmitted, db_salt, function (err, hash) {
+        if (hash === db_hashed_password) {
+          // res.json(data);
+          res.send('ok')
+        } else {
+          res.sendStatus(500)
+        }
+      });
     }
   });
 });
-
-freeFunc = () => {
-  console.log('what')
-}
 
 checkPassword = (username, password) => {
   $.ajax({
@@ -90,7 +88,7 @@ checkPassword = (username, password) => {
     success: (data) => {
       // get salt back from database
       let dbPassword = data[0].password
-      //this.checkBcrypt(dbPassword, salt)
+      //this.hashPassword(dbPassword, salt)
       if (dbPassword === password) {
         console.log('password matches!!!')
         // TODO route to BETTING PAGE
@@ -102,12 +100,6 @@ checkPassword = (username, password) => {
       console.log('err', err);
     }
   })
-}
-
-checkBcrypt = (password, salt) => {
-  bcrypt.hash(password, salt, (err, hash) => {
-    console.log('hash is', hash)
-  });
 }
 
 app.get('/games', function (req, res) {
@@ -127,6 +119,12 @@ app.get('/games', function (req, res) {
     })
 });
 
-app.listen(3000, function () {
-  console.log('listening on port 3000!');
+app.get('/users', function (req, res) {
+  users.selectAll(function (err, data) {
+    if (err) {
+      res.sendStatus(500);
+    } else {
+      res.json(data);
+    }
+  });
 });

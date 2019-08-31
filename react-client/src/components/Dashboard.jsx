@@ -12,8 +12,8 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    let games = this.state.gameSpreads.map(game =>
-      <SingleGame game={game}></SingleGame>
+    let games = this.state.gameSpreads.map((game, idx) =>
+      <SingleGame game={game} key={`key-${idx}`}></SingleGame>
     )
     return (
       <div className="dashboard">
@@ -44,7 +44,6 @@ class Dashboard extends React.Component {
         </div>
       </div>
     )
-
   }
 }
 

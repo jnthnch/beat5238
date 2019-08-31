@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
-import bcrypt from 'bcryptjs';
-
 
 class CreateUserForm extends React.Component {
   constructor(props) {
