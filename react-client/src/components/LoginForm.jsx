@@ -60,63 +60,42 @@ class LoginForm extends React.Component {
   }
 
   handleLogin(event) {
-    console.log('pressed login')
-    console.log('state is', this.state)
     let usernameInput = this.state.username
     let passwordInput = this.state.password;
     // this.checkPassword(usernameInput, passwordInput);
+    // checkPassword(username, password) {
+    $.ajax({
+      type: "POST",
+      url: `/users/${usernameInput}`,
+      data: {
+        password: passwordInput
+      },
+      success: (data) => {
+        // get salt back from database
+        console.log('sent login')
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    })
   }
 
-  // checkPassword(username, password) {
-  //   $.ajax({
-  //     type: "GET",
-  //     url: `/users/${username}`,
-  //     data: {
-  //       password: password
-  //     },
-  //     success: (data) => {
-  //       // get salt back from database
-  //       let dbPassword = data[0].password
-  //       //this.checkBcrypt(dbPassword, salt)
-  //       if (dbPassword === password) {
-  //         console.log('password matches!!!')
-  //         // TODO route to BETTING PAGE
-  //       } else {
-  //         alert('wrong password entered')
-  //       }
-  //     },
-  //     error: (err) => {
-  //       console.log('err', err);
-  //     }
-  //   })
-  // }
-
-  // checkBcrypt(password, salt) {
-  //   bcrypt.hash(password, salt, (err, hash) => {
-  //     console.log('hash is', hash)
-  //   });
-  // }
-
-  // consider react final form, formik for library forms - why/why not to use them
-  // use library "classnames" to prevent classname collisions
-  // container components pattern - by redux creator Dan Abra
-  // build a promise library with native js and build a DOM tree
   render() {
     return (
       <div className="wrapper" >
         <h1 className="header">
           Beat5238
-        </h1>
+          </h1>
         <form className="forms" onSubmit={this.handleSubmit} method="post">
           <div className="equal-space-inputs">
             <label>
               Username:
-                <input type="text" name="username" defaultValue='' onChange={this.handleInputChange} required />
+                  <input type="text" name="username" defaultValue='' onChange={this.handleInputChange} required />
             </label>
 
             <label>
               Password:
-                <input type="password" name="password" defaultValue='' onChange={this.handleInputChange} required />
+                  <input type="password" name="password" defaultValue='' onChange={this.handleInputChange} required />
             </label>
           </div>
 
@@ -139,5 +118,41 @@ class LoginForm extends React.Component {
   }
 
 }
+
+// checkPassword(username, password) {
+//   $.ajax({
+//     type: "GET",
+//     url: `/users/${username}`,
+//     data: {
+//       password: password
+//     },
+//     success: (data) => {
+//       // get salt back from database
+//       let dbPassword = data[0].password
+//       //this.checkBcrypt(dbPassword, salt)
+//       if (dbPassword === password) {
+//         console.log('password matches!!!')
+//         // TODO route to BETTING PAGE
+//       } else {
+//         alert('wrong password entered')
+//       }
+//     },
+//     error: (err) => {
+//       console.log('err', err);
+//     }
+//   })
+// }
+
+// checkBcrypt(password, salt) {
+//   bcrypt.hash(password, salt, (err, hash) => {
+//     console.log('hash is', hash)
+//   });
+// }
+
+// consider react final form, formik for library forms - why/why not to use them
+// use library "classnames" to prevent classname collisions
+// container components pattern - by redux creator Dan Abra
+// build a promise library with native js and build a DOM tree
+
 
 export default LoginForm;
