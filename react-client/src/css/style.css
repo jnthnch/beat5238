@@ -48,27 +48,6 @@ input, button {
   color: #e00000;
 }
 
-/* .form-group {
-  background-color: white;
-  color: #e00000;
-} */
-
-
-/* .UsernameDropdown {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 30px;
-  padding: 30px;
-  background-color: white;
-}
-
-#UsernameDropdownHeader {
-  text-align: center;
-  color: #e00000;
-} */
-
 .dashboard {
   font-family: 'Noto Serif JP', serif;
   background-color: #ededed;
@@ -130,42 +109,55 @@ input, button {
 }
 
 .game-lines {
+  padding: 10px 10px 0px 10px;
   display: grid;
   grid-area: game-lines;
-  margin-right: 20px;
   justify-content: end;
   height: 50px;
-  grid-template-columns: 350px 360px;
+  grid-template-columns: 314px 1fr;
   grid-template-areas: 
   "blank-space game-line-text"
 }
 
 .game-lines-text {
-  /* border: 5px solid purple; */
   font-family: 'Rubik', sans-serif;
   color: grey;
   height: 100%;
-  margin-left: 5px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: end;
   grid-area: game-line-text;
+}
 
+.blank-space {
+  display: grid;
+  grid-area: blank-space;
 }
 
 .spread {
+  display: grid;
+  text-align: center;
+  position: relative;
+  justify-items: end;
+  left: 5px;
 }
 
 .money-line {
+  display: grid;
+  text-align: center;
 }
 
 .total {
+  display: grid;
+  text-align: center;
+  position: relative;
+  right: 5px;
 }
 
 .game-list {
   display: grid;
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
   grid-gap: 15px;
   height: auto;
   align-content: start;
@@ -269,7 +261,6 @@ input, button {
 .moneyline {
   display: grid;
   background-color: #fff;
-
   font-family: 'Rubik', sans-serif;
   border-left: 1px solid #d1d1d1;
   grid-area: moneyline;

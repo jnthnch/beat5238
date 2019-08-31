@@ -24,6 +24,7 @@ class Dashboard extends React.Component {
         <div className="games">
           <p className="games-header">NFL Games ({this.state.gameSpreads.length}) - Week 1</p>
           <div className="game-lines">
+            <div className="blank-space"></div>
             <div className="game-lines-text">
               <text className="spread">Spread</text>
               <text className="money-line">Moneyline</text>

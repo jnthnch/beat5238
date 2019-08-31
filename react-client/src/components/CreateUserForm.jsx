@@ -19,7 +19,7 @@ class CreateUserForm extends React.Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
         username: this.state.username,
-        password: this.state.password, //TO DO: Encrypt the password; Bcrypt?
+        password: this.state.password,
       },
       success: (data) => {
         alert(`User created`)
