@@ -36,8 +36,7 @@ class LoginForm extends React.Component {
 
     let usernameInput = this.state.username;
     let passwordInput = this.state.password;
-    // this.checkPassword(usernameInput, passwordInput);
-    // checkPassword(username, password) {
+
     $.ajax({
       type: "POST",
       url: `/users/${usernameInput}`,
@@ -46,7 +45,6 @@ class LoginForm extends React.Component {
         password: passwordInput
       },
       success: (data) => {
-        // get salt back from database
         this.setState({
           logged_in: true
         })
@@ -99,7 +97,6 @@ class LoginForm extends React.Component {
       )
     }
   }
-
 }
 // consider react final form, formik for library forms - why/why not to use them
 // use library "classnames" to prevent classname collisions
