@@ -18,16 +18,16 @@ const SingleGame = (props) => {
           </div>
         </div>
         <div className="game-spread">
-          <text className="away-spread">{props.game.awaySpread}</text>
-          <text className="home-spread">{props.game.homeSpread}</text>
+          <text className="away-spread" onClick={(e) => props.gameSelector(e)}>{props.game.awaySpread}</text>
+          <text className="home-spread" onClick={(e) => props.gameSelector(e)}> {props.game.homeSpread}</text>
         </div>
         <div className="moneyline">
           <text className="away-moneyline">{props.game.awayML}</text>
           <text className="home-moneyline">{props.game.homeML}</text>
         </div>
         <div className="totals-line">
-          <text className="totals-over">{props.game.over}</text>
-          <text className="totals-under">{props.game.under}</text>
+          <text className="totals-over" onClick={(e) => props.gameSelector(e)}> {props.game.over}</text>
+          <text className="totals-under" onClick={(e) => props.gameSelector(e)}> {props.game.under}</text>
         </div>
       </div>
       <div className="single-game-footer">
@@ -38,3 +38,5 @@ const SingleGame = (props) => {
 }
 
 export default SingleGame;
+
+
