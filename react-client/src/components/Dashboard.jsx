@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
     return (
       <div className="dashboard">
         <div className="dashboard-title">
-          <p>Dashboard</p>
+          <h1><b>Dashboard</b></h1>
         </div>
 
         <GamesDashboard></GamesDashboard>

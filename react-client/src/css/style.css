@@ -67,10 +67,11 @@ input, button {
 }
 
 .dashboard-title {
+  font-family: 'Rubik', sans-serif;
+  color: #000000;
   display: grid;
   background-color: #fff;
   grid-area: dashboard;
-  border: 5px solid teal;
   justify-content: center;
   align-items: center;
 }
@@ -80,7 +81,6 @@ input, button {
   padding: 10px;
   height: auto;
   width: 100%;
-  border: 5px solid red;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 50px 50px 1fr 1fr 1fr 1fr;
   border-radius: 3px;
@@ -140,7 +140,7 @@ input, button {
   text-align: center;
   position: relative;
   justify-items: end;
-  left: 5px;
+  left: 10px;
 }
 
 .money-line {
@@ -152,7 +152,7 @@ input, button {
   display: grid;
   text-align: center;
   position: relative;
-  right: 5px;
+  right: 10px;
 }
 
 .game-list {
@@ -210,22 +210,20 @@ input, button {
   "home-team"
 }
 
-.game-teams .away-team {
+.away-team {
   display: grid;
   align-content: center;
   height: 100%;
   justify-content: center;
   border-bottom: 1px solid #d1d1d1;
-  background-color: #fff;
   grid-area: away-team
 }
 
-.game-teams .home-team {
+.home-team {
   display: grid;
   align-content: center;
   height: 100%;
   justify-content: center;
-  background-color: #fff;
   grid-area: home-team
 }
 
@@ -244,13 +242,17 @@ input, button {
   grid-area: spread;
   font-size: 12px;
   text-align: center;
-  align-content: space-around;
 }
 
-
-.game-spread .custom-separator {
+.away-spread {
+  display: grid;
   border-bottom: 1px solid #d1d1d1;
-  width: 100%;
+  align-content: center;
+}
+
+.home-spread {
+  display: grid;
+  align-content: center;
 }
 
 .game-spread :hover {
@@ -261,17 +263,23 @@ input, button {
 .moneyline {
   display: grid;
   background-color: #fff;
+  height: 100%;
   font-family: 'Rubik', sans-serif;
   border-left: 1px solid #d1d1d1;
   grid-area: moneyline;
   font-size: 12px;
   text-align: center;
-  align-content: space-around;
 }
 
-.moneyline .custom-separator {
+.away-moneyline {
+  display: grid;
+  align-content: center;
   border-bottom: 1px solid #d1d1d1;
-  width: 100%;
+}
+
+.home-moneyline {
+  display: grid;
+  align-content: center;
 }
 
 .totals-line {
@@ -282,12 +290,17 @@ input, button {
   grid-area: totals-line;
   font-size: 12px;
   text-align: center;
-  align-content: space-around;
 }
 
-.totals-line .custom-separator {
+.totals-over {
+  display: grid;
+  align-content: center;
   border-bottom: 1px solid #d1d1d1;
-  width: 100%;
+}
+
+.totals-under {
+  display: grid;
+  align-content: center;
 }
 
 .totals-line :hover {

@@ -13,7 +13,7 @@ let gameSpreads = [
   },
   {
     "gameTime": `9/8/19\n10:00 AM`,
-    "awayTeam": "Atlanta Falconss",
+    "awayTeam": "Atlanta Falcons",
     "awaySpread": "+4.0 (-110)",
     "awayML": "+165",
     "over": "O47.5 (-110)",

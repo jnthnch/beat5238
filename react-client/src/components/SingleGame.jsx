@@ -18,19 +18,16 @@ const SingleGame = (props) => {
           </div>
         </div>
         <div className="game-spread">
-          <div>{props.game.awaySpread}</div>
-          <span className="custom-separator"></span>
-          <div>{props.game.homeSpread}</div>
+          <text className="away-spread">{props.game.awaySpread}</text>
+          <text className="home-spread">{props.game.homeSpread}</text>
         </div>
         <div className="moneyline">
-          <text>{props.game.awayML}</text>
-          <span className="custom-separator"></span>
-          <text>{props.game.homeML}</text>
+          <text className="away-moneyline">{props.game.awayML}</text>
+          <text className="home-moneyline">{props.game.homeML}</text>
         </div>
         <div className="totals-line">
-          <text>{props.game.over}</text>
-          <span className="custom-separator"></span>
-          <text>{props.game.under}</text>
+          <text className="totals-over">{props.game.over}</text>
+          <text className="totals-under">{props.game.under}</text>
         </div>
       </div>
       <div className="single-game-footer">

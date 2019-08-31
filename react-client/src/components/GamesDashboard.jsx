@@ -17,7 +17,7 @@ class GamesDashboard extends React.Component {
     )
     return (
       <div className="games">
-        <p className="games-header">NFL Games ({this.state.gameSpreads.length}) - Week 1</p>
+        <p className="games-header">NFL Week 1 - Games ({this.state.gameSpreads.length})</p>
         <div className="game-lines">
           <div className="blank-space"></div>
           <div className="game-lines-text">
